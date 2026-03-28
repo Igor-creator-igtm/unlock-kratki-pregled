@@ -1,623 +1,120 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kratki pregled | Unlock the Essence</title>
-  <meta name="description" content="Kratki licni pregled koji pokazuje u kom delu ritma se sada nalazis i zasto je tempo takav kakav jeste. Posalji zahtev i dobices potvrdu i sledeci korak za izradu." />
-  <meta name="robots" content="index,follow" />
-  <meta property="og:title" content="Kratki pregled | Unlock the Essence" />
-  <meta property="og:description" content="Ako imas osecaj da se nesto menja, ali ne vidis gde se nalazis, mozes poslati zahtev za kratki licni pregled." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tvoj-domen.com/" />
-  <meta property="og:image" content="https://tvoj-domen.com/og-image.jpg" />
-  <meta name="theme-color" content="#f5f1ea" />
 
   <style>
-    :root {
-      --bg: #f6f1e8;
-      --bg-soft: #efe7da;
-      --card: rgba(255,255,255,0.72);
-      --text: #2d2a26;
-      --muted: #6d665e;
-      --line: rgba(45,42,38,0.11);
-      --accent: #8a6d55;
-      --accent-dark: #725742;
-      --max: 1120px;
-      --radius: 24px;
-      --shadow: 0 14px 40px rgba(45,42,38,0.08);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.7), transparent 32%),
-        linear-gradient(180deg, #f7f3ed 0%, #f2ede5 100%);
+      background: #f7f3ed;
+      color: #2d2a26;
       line-height: 1.7;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
     .wrap {
-      width: min(var(--max), calc(100% - 32px));
+      max-width: 720px;
       margin: 0 auto;
-    }
-
-    header {
-      padding: 22px 0;
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(10px);
-      background: rgba(246,241,232,0.8);
-      border-bottom: 1px solid rgba(45,42,38,0.06);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .brand {
-      font-size: 1rem;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 12px 22px;
-      border-radius: 999px;
-      font-size: 0.98rem;
-      border: 1px solid transparent;
-      transition: 0.25s ease;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 10px 24px rgba(138,109,85,0.22);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent-dark);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      border-color: var(--line);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.56);
-    }
-
-    .hero {
-      padding: 84px 0 54px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 34px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.56);
-      border: 1px solid var(--line);
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    h1, h2, h3 {
-      margin: 0 0 18px;
-      line-height: 1.2;
-      font-weight: 500;
+      padding: 60px 20px;
     }
 
     h1 {
-      font-size: clamp(2.35rem, 4vw, 4.6rem);
-      max-width: 11ch;
-    }
-
-    .hero p {
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 58ch;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.55);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .hero-card {
-      padding: 32px 28px;
-    }
-
-    .price {
-      font-size: 3rem;
-      line-height: 1;
-      margin: 8px 0 14px;
-    }
-
-    .price small {
-      font-size: 1rem;
-      color: var(--muted);
-    }
-
-    .mini-list {
-      margin: 18px 0 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .mini-list li {
-      padding: 10px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .mini-list li:last-child {
-      border-bottom: 0;
-    }
-
-    section {
-      padding: 28px 0;
-    }
-
-    .section-head {
-      max-width: 760px;
+      font-size: 2.6rem;
+      font-weight: 500;
+      line-height: 1.2;
       margin-bottom: 24px;
     }
 
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
+    p {
+      color: #6d665e;
+      font-size: 1.05rem;
+      margin-bottom: 18px;
     }
 
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    .box {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(0,0,0,0.08);
+      border-radius: 20px;
+      padding: 32px;
+      margin-top: 40px;
     }
 
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .feature h3,
-    .step h3,
-    .faq h3 {
-      font-size: 1.12rem;
+    .price {
+      font-size: 2rem;
       margin-bottom: 10px;
     }
 
-    .feature p,
-    .step p,
-    .faq p {
-      margin: 0;
-      color: var(--muted);
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      background: #8a6d55;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.2s ease;
     }
 
-    .quote-box {
-      padding: 34px;
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.42);
-      font-size: 1.12rem;
+    .btn:hover {
+      background: #725742;
     }
 
-    .process {
-      counter-reset: steps;
-    }
-
-    .step {
-      position: relative;
-      padding-top: 54px;
-    }
-
-    .step::before {
-      counter-increment: steps;
-      content: counter(steps);
-      position: absolute;
-      top: 22px;
-      left: 22px;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(138,109,85,0.12);
-      color: var(--accent-dark);
-      font-size: 0.95rem;
-    }
-
-    .form-block {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .form-note {
-      color: var(--muted);
-      margin-top: 0;
-    }
-
-    form {
-      display: grid;
-      gap: 14px;
-      margin-top: 18px;
-    }
-
-    label {
-      font-size: 0.95rem;
-      color: var(--text);
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 14px 16px;
-      border-radius: 16px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.78);
-      font: inherit;
-      color: var(--text);
-      outline: none;
-    }
-
-    input:focus,
-    textarea:focus {
-      border-color: rgba(138,109,85,0.5);
-      box-shadow: 0 0 0 3px rgba(138,109,85,0.08);
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .small {
-      font-size: 0.95rem;
-    }
-
-    .muted {
-      color: var(--muted);
-    }
-
-    footer {
-      padding: 38px 0 52px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .footer-line {
-      border-top: 1px solid var(--line);
-      padding-top: 20px;
-    }
-
-    @media (max-width: 900px) {
-      .hero-grid,
-      .grid-3,
-      .grid-2,
-      .form-block {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        max-width: 100%;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-      }
-
-      .hero {
-        padding-top: 58px;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .wrap {
-        width: min(var(--max), calc(100% - 20px));
-      }
-
-      .card,
-      .quote-box {
-        padding: 22px;
-      }
-
-      .price {
-        font-size: 2.35rem;
-      }
+    .note {
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: #8a837a;
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="wrap nav">
-      <a href="#" class="brand">Unlock the Essence</a>
-      <nav class="nav-links">
-        <a href="#sta-dobijas">Sta dobijas</a>
-        <a href="#kako-radi">Kako radi</a>
-        <a href="#zahtev">Posalji zahtev</a>
-      </nav>
+  <div class="wrap">
+
+    <h1>
+      Ako imaš osećaj da se nešto menja,  
+      ali ne vidiš gde se nalaziš
+    </h1>
+
+    <p>
+      Postoje trenuci kada se tempo promeni, kada nešto više ne ide kao ranije,
+      ali još nema jasnog pravca.
+    </p>
+
+    <p>
+      Ovaj kratak pregled pokazuje u kom delu svog ciklusa se trenutno nalaziš
+      i zašto stvari sada izgledaju ovako kako izgledaju.
+    </p>
+
+    <div class="box">
+
+      <div class="price">
+        Kratki pregled — $9
+      </div>
+
+      <p>
+        Pisani lični tekst koji ti pomaže da prepoznaš šta je prirodno u ovom periodu
+        i gde nema potrebe za forsiranjem.
+      </p>
+
+      <p>
+        Izrada 1–2 dana nakon potvrde.
+      </p>
+
+      <!-- OVDE UBACI LINK NA CARRD -->
+      <a class="btn" href="https://tvoj-carrd-link.com" target="_blank">
+        Zatraži svoj kratki pregled
+      </a>
+
+      <div class="note">
+        Nakon slanja zahteva, dobijaš odgovor sa sledećim korakom za potvrdu.
+      </div>
+
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div>
-          <span class="eyebrow">Kratki pregled</span>
-          <h1>Ako imas osecaj da se nesto menja, ali ne vidis gde se nalazis</h1>
-
-          <p>
-            Ovo je kratak licni pregled koji pokazuje u kom delu ritma se sada nalazis i zasto je tempo takav kakav jeste.
-          </p>
-
-          <p>
-            Dobijas jasan pisani tekst koji ti moze pomoci da prepoznas sta je prirodno u ovom periodu i gde nema potrebe za forsiranjem.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#zahtev">Zatrazi svoj kratki pregled</a>
-            <a class="btn btn-secondary" href="#kako-radi">Kako izgleda proces</a>
-          </div>
-        </div>
-
-        <aside class="card hero-card">
-          <div class="muted small">Pisani licni tekst</div>
-          <div class="price">$9 <small>nakon potvrde</small></div>
-
-          <ul class="mini-list">
-            <li>Pokazuje gde se trenutno nalazis u ciklusu</li>
-            <li>Objasnjava zasto je tempo takav kakav jeste</li>
-            <li>Prepoznaje sta je prirodno u ovom periodu</li>
-            <li>Pokazuje sta nema potrebe forsirati</li>
-            <li>Izrada 1 do 2 dana nakon potvrde</li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="quote-box">
-          Nekad ti ne treba veliki odgovor.
-          Dovoljno je da jasnije vidis u kom delu svog ritma se trenutno nalazis.
-        </div>
-      </div>
-    </section>
-
-    <section id="sta-dobijas">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Sta dobijas</h2>
-          <p>
-            Ovaj pregled je napravljen kao jednostavan prvi korak za trenutke kada osecas pomeranje, promenu, usporavanje ili zatvaranje, a ne vidis jos jasno sta se zapravo desava. :contentReference[oaicite:1]{index=1}
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <div class="card feature">
-            <h3>Trenutna pozicija</h3>
-            <p>
-              Dobijas jasan prikaz trenutne faze kroz koju prolazis, bez komplikovanog objasnjavanja sistema.
-            </p>
-          </div>
-
-          <div class="card feature">
-            <h3>Objasnjenje unutrasnjeg tempa</h3>
-            <p>
-              Tekst pokazuje zasto se stvari sada odvijaju ovim ritmom i zasto nesto deluje brze, sporije ili nestabilnije nego ranije.
-            </p>
-          </div>
-
-          <div class="card feature">
-            <h3>Tiha orijentacija</h3>
-            <p>
-              Pregled ne daje agresivne savete, vec vraca osecaj jasnijeg odnosa prema onome sto se trenutno odvija.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="kako-radi">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Kako radi</h2>
-          <p>
-            Tok je namerno jednostavan. Najpre saljes zahtev, zatim dobijas potvrdu i sledeci korak za izradu pregleda. Minimalna forma sa osnovnim podacima odgovara logici ovog proizvoda. :contentReference[oaicite:2]{index=2}
-          </p>
-        </div>
-
-        <div class="grid-3 process">
-          <div class="card step">
-            <h3>Posaljes zahtev</h3>
-            <p>
-              Unosis ime i datum rodjenja, a po zelji i jednu kratku recenicu o tome sta ti se trenutno ponavlja ili menja.
-            </p>
-          </div>
-
-          <div class="card step">
-            <h3>Dobijas odgovor</h3>
-            <p>
-              Nakon prijave stize ti potvrda i link za placanje, kako bi proces ostao jasan i lagan za prvi korak.
-            </p>
-          </div>
-
-          <div class="card step">
-            <h3>Pregled se priprema</h3>
-            <p>
-              Nakon potvrde, kratki pregled se izradjuje i stize ti u narednih 1 do 2 dana. :contentReference[oaicite:3]{index=3}
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="zahtev">
-      <div class="wrap form-block">
-        <div class="card">
-          <h2>Zatrazi svoj kratki pregled</h2>
-          <p class="form-note">
-            Nakon sto posaljes zahtev, dobices potvrdu i sledeci korak za izradu.
-            Pregled se radi tek nakon potvrde.
-          </p>
-
-          <form action="https://formspree.io/f/TVOJ_ID" method="POST">
-            <div>
-              <label for="ime">Ime</label>
-              <input type="text" id="ime" name="ime" required />
-            </div>
-
-            <div>
-              <label for="datum">Datum rodjenja</label>
-              <input type="text" id="datum" name="datum_rodjenja" placeholder="npr. 21.11.1989" required />
-            </div>
-
-            <div>
-              <label for="poruka">Sta ti se trenutno ponavlja ili menja</label>
-              <textarea id="poruka" name="poruka" placeholder="Mozes napisati jednu kratku recenicu. Ovo polje nije obavezno."></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Posalji zahtev</button>
-          </form>
-
-          <p class="small muted" style="margin-top:14px;">
-            Zameni link u formi svojim Formspree, Basin, Tally ili drugim endpoint-om koji ti salje prijave na email.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Sta se desava posle prijave</h3>
-          <ul class="mini-list">
-            <li>Tvoj zahtev stize direktno na email</li>
-            <li>Ti odgovaras kada zelis da potvrdis prijavu</li>
-            <li>U odgovoru saljes link za placanje</li>
-            <li>Nakon potvrde pregled ide u izradu</li>
-            <li>Rok izrade je 1 do 2 dana nakon potvrde</li>
-          </ul>
-
-          <p class="small muted" style="margin-top:18px;">
-            Ovaj model je dobar ako zelis da zadrzis licni kontakt pre placanja, a da stranica i dalje ostane prodajna i jasna.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="pitanja">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Cesta pitanja</h2>
-        </div>
-
-        <div class="grid-2">
-          <div class="card faq">
-            <h3>Da li placam odmah</h3>
-            <p>
-              Ne. Najpre saljes zahtev. Nakon toga dobijas potvrdu i sledeci korak za nastavak procesa.
-            </p>
-          </div>
-
-          <div class="card faq">
-            <h3>Sta je potrebno za prijavu</h3>
-            <p>
-              Dovoljni su ime i datum rodjenja. Po zelji mozes dodati i jednu kratku recenicu o svom trenutnom osecanju ili promeni. :contentReference[oaicite:4]{index=4}
-            </p>
-          </div>
-
-          <div class="card faq">
-            <h3>Koliko traje izrada</h3>
-            <p>
-              Kratki pregled stize u roku od 1 do 2 dana nakon potvrde. :contentReference[oaicite:5]{index=5}
-            </p>
-          </div>
-
-          <div class="card faq">
-            <h3>Da li je ovo isto sto i licni uvid</h3>
-            <p>
-              Nije. Ovo je kraci i jednostavniji pregled trenutne faze. Za siri i dublji kontekst postoji licni uvid.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-line">
-      <div>Unlock the Essence</div>
-      <div class="small muted" style="margin-top:8px;">
-        Kratki pregled je prvi korak za trenutke kada zelis jasnije da vidis gde se nalazis, bez preopterecenja i bez suvisne komplikacije.
-      </div>
-    </div>
-  </footer>
+  </div>
 
 </body>
 </html>
