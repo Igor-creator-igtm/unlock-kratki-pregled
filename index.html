@@ -4,86 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kratki uvid | Unlock the Essence</title>
-  <meta name="description" content="Ako imaš osećaj da se iste stvari ponavljaju, ali ne vidiš zašto, kratki uvid može doneti prvi jasan pogled na ono što se sada ponavlja.">
+  <meta name="description" content="Ako imaš osećaj da se iste stvari ponavljaju, ali ne vidiš jasno šta se sada vraća, kratki uvid može doneti prvi jasan pogled na trenutni obrazac.">
 
   <style>
+    :root {
+      --bg: #f7f3ed;
+      --surface: rgba(255,255,255,0.82);
+      --text: #2d2a26;
+      --muted: #6d665e;
+      --line: rgba(0,0,0,0.08);
+      --accent: #7d624d;
+      --accent-hover: #684f3d;
+      --radius: 18px;
+      --shadow: 0 6px 18px rgba(0,0,0,0.035);
+      --max: 720px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Georgia, "Times New Roman", serif;
-      background: #f7f3ed;
-      color: #2d2a26;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.7;
     }
 
     .wrap {
-      max-width: 720px;
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 60px 20px;
+      padding: 56px 20px;
     }
 
     h1 {
-      font-size: 2.6rem;
+      font-size: clamp(2rem, 4vw, 2.8rem);
       font-weight: 500;
       line-height: 1.2;
-      margin-bottom: 24px;
-      color: #2d2a26;
+      margin: 0 0 24px;
+      color: var(--text);
     }
 
     p {
-      color: #6d665e;
+      color: var(--muted);
       font-size: 1.05rem;
-      margin-bottom: 18px;
+      margin: 0 0 18px;
     }
 
     .box {
-      background: rgba(255,255,255,0.7);
-      border: 1px solid rgba(0,0,0,0.08);
-      border-radius: 20px;
-      padding: 32px;
-      margin-top: 40px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+      margin-top: 36px;
     }
 
     .price {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #2d2a26;
+      font-size: 1.9rem;
+      line-height: 1.2;
+      margin: 0 0 12px;
+      color: var(--text);
     }
 
     .btn {
       display: inline-block;
-      margin-top: 24px;
-      padding: 14px 26px;
-      border-radius: 999px;
-      background: #8a6d55;
+      margin-top: 22px;
+      padding: 14px 22px;
+      border-radius: 12px;
+      background: var(--accent);
       color: #fff;
       text-decoration: none;
-      transition: 0.2s ease;
       font-size: 1rem;
+      transition: background-color 0.2s ease, transform 0.2s ease;
     }
 
-    .btn:hover {
-      background: #725742;
+    .btn:hover,
+    .btn:focus {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
     }
 
     .trust {
       margin-top: 18px;
       font-size: 0.95rem;
-      color: #7d756d;
-    }
-
-    .note {
-      margin-top: 14px;
-      font-size: 0.9rem;
-      color: #8a837a;
+      color: #7b746c;
     }
 
     @media (max-width: 640px) {
       .wrap {
         padding: 42px 18px;
-      }
-
-      h1 {
-        font-size: 2.1rem;
       }
 
       .box {
@@ -92,7 +103,6 @@
 
       .btn {
         width: 100%;
-        box-sizing: border-box;
         text-align: center;
       }
     }
@@ -105,21 +115,22 @@
 
     <h1>
       Ako imaš osećaj da se iste stvari ponavljaju,
-      ali ne vidiš zašto
+      ali ne vidiš jasno šta se sada vraća
     </h1>
 
     <p>
-      Ponekad se situacije menjaju,
+      Ponekad se okolnosti menjaju,
       ali osećaj ostaje isti.
-      Kao da se različite stvari dešavaju,
-      a vode na isto mesto.
+      Kao da se spolja dešavaju različite stvari,
+      a iznutra sve vodi na isto mesto.
     </p>
 
     <p>
-  Kratki uvid nastaje upravo iz ovakvog trenutka u kome se sada nalaziš.
-  Ne traži da sve odmah razumeš,
-  već ti pomaže da jasnije vidiš šta se sada ponavlja.
-</p>
+      Kratki uvid nastaje upravo iz takvog trenutka.
+      Ne traži da sve odmah razumeš,
+      već ti pomaže da jasnije vidiš
+      koji se obrazac sada ponavlja.
+    </p>
 
     <div class="box">
 
@@ -128,30 +139,26 @@
       </div>
 
       <p>
-  Kratak pisani uvid koji jasno pokazuje ono što se sada ponavlja.
-</p>
-
-      <p>
-        Dobićeš sažet uvid koji pokazuje
-        koji obrazac se trenutno ponavlja,
-        zašto se vraća
-        i šta se zapravo dešava ispod onoga što je sada vidljivo.
+        Kratak pisani uvid koji pokazuje
+        ono što se trenutno vraća
+        i pomaže da jasnije sagledaš gde se sada nalaziš.
       </p>
 
       <p>
-        Ovaj uvid daje prvi jasan pogled na ono što se sada ponavlja.
+        Ovo je prvi jasan pogled na obrazac koji je trenutno aktivan.
+        Dovoljno da nešto postane vidljivo,
+        bez potrebe da odmah ulaziš dublje.
       </p>
 
       <div class="trust">
         Izrada traje 1 do 2 dana nakon potvrde.
-        Ne plaćaš unapred. Tek nakon što vidiš da želiš da uvid bude urađen.
+        Ne plaćaš unapred.
+        Tek nakon što potvrdiš da želiš da uvid bude urađen.
       </div>
 
       <a class="btn" href="https://uvid.unlocktheessence.com/#zahtev" target="_blank">
         Zatraži kratki uvid
       </a>
-
-      
 
     </div>
 
