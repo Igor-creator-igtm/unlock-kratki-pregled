@@ -6,6 +6,8 @@
   <title>Kratki uvid | Unlock the Essence</title>
   <meta name="description" content="Ako imaš osećaj da se iste stvari ponavljaju, ali ne vidiš jasno šta se sada vraća, kratki uvid može doneti prvi jasan pogled na trenutni obrazac.">
 
+  <link rel="icon" type="image/png" href="unlock-the-essence-logo.png">
+
   <style>
     :root {
       --bg: #f7f3ed;
@@ -36,6 +38,22 @@
       max-width: var(--max);
       margin: 0 auto;
       padding: 56px 20px;
+      text-align: center;
+    }
+
+    /* LOGO */
+    .logo-top {
+      margin-bottom: 22px;
+    }
+
+    .logo-top img {
+      height: 36px;
+      opacity: 0.8;
+      transition: 0.2s ease;
+    }
+
+    .logo-top img:hover {
+      opacity: 1;
     }
 
     h1 {
@@ -50,6 +68,7 @@
       color: var(--muted);
       font-size: 1.05rem;
       margin: 0 0 18px;
+      text-align: left;
     }
 
     .box {
@@ -59,6 +78,7 @@
       box-shadow: var(--shadow);
       padding: 30px;
       margin-top: 36px;
+      text-align: left;
     }
 
     .price {
@@ -112,6 +132,11 @@
 <body>
 
   <div class="wrap">
+
+    <!-- LOGO -->
+    <div class="logo-top">
+      <img src="unlock-the-essence-logo.png" alt="Unlock the Essence">
+    </div>
 
     <h1>
       Ako imaš osećaj da se iste stvari ponavljaju,
